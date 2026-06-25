@@ -19,7 +19,8 @@
 2. 开启右上角「开发者模式」。
 3. 点击左上角「加载已解压的扩展程序」。
 4. 选择本项目所在文件夹 `snap-start`。
-5. 新标签页会被自动覆盖，打开新标签页即可看到效果。
+5. 复制 `config.example.js` 为 `config.js`，并填入你的 Pixabay API Key。
+6. 新标签页会被自动覆盖，打开新标签页即可看到效果。
 
 ## 文件结构
 
@@ -29,6 +30,9 @@ snap-start/
 ├── newtab.html        # 新标签页 HTML
 ├── newtab.css         # 新标签页样式
 ├── newtab.js          # 业务逻辑：图片获取、搜索、时钟、钉住
+├── config.js          # 本地配置文件（含 API Key，不提交到 Git）
+├── config.example.js  # 配置示例文件
+├── .gitignore         # Git 忽略规则
 ├── icon16.png         # 扩展图标 16x16
 ├── icon32.png         # 扩展图标 32x32
 ├── icon48.png         # 扩展图标 48x48
@@ -61,7 +65,7 @@ snap-start/
 
 ## 注意事项
 
-- 本扩展使用内置的 Pixabay API Key，无需额外配置。
+- 首次使用请复制 `config.example.js` 改为 `config.js` 并填入自己的 Pixabay API Key。
 - 首次加载或网络不佳时，图片可能需要短暂等待。
 - 如需重置所有状态，可在 Chrome 扩展管理页点击「删除」，然后重新加载。
 

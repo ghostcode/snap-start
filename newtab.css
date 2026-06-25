@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -130,9 +131,19 @@ html, body {
 }
 
 @keyframes flipTick {
-  0% { transform: rotateX(0); }
-  50% { transform: rotateX(-90deg); opacity: 0.25; }
-  100% { transform: rotateX(0); opacity: 1; }
+  0% {
+    transform: rotateX(0);
+  }
+
+  50% {
+    transform: rotateX(-90deg);
+    opacity: 0.25;
+  }
+
+  100% {
+    transform: rotateX(0);
+    opacity: 1;
+  }
 }
 
 .flip-sep {
@@ -163,9 +174,12 @@ html, body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
 }
 
 .search-engine-tabs button {
+  position: relative;
+  z-index: 1;
   border: none;
   background: transparent;
   color: rgba(255, 255, 255, 0.75);
@@ -174,7 +188,7 @@ html, body {
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: color 0.25s ease;
 }
 
 .search-engine-tabs button:hover {
@@ -182,9 +196,20 @@ html, body {
 }
 
 .search-engine-tabs button.active {
-  background: rgba(255, 255, 255, 0.15);
   color: #fff;
+}
+
+.engine-indicator {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  height: 26px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  z-index: 0;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .search-form {
@@ -204,6 +229,18 @@ html, body {
 .search-form:focus-within {
   border-color: rgba(56, 189, 248, 0.5);
   box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+.quote {
+  margin-top: 10px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  max-width: 520px;
+  line-height: 1.5;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  user-select: none;
+  font-style: italic;
 }
 
 .search-form input {
@@ -324,10 +361,10 @@ html, body {
   opacity: 0;
   z-index: 9;
   transition: max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-              max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-              padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity 0.25s ease,
-              bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.25s ease,
+    bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .info-bar.expanded {
@@ -411,7 +448,9 @@ html, body {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .error {
@@ -451,31 +490,39 @@ html, body {
   .top-bar {
     padding: 6px 8px;
   }
+
   .controls {
     justify-content: center;
   }
+
   .flip-group {
     width: 36px;
     height: 58px;
   }
+
   .flip-digit {
     font-size: 56px;
   }
+
   .flip-sep {
     font-size: 44px;
   }
+
   .clock .date {
     font-size: 13px;
   }
+
   .info-bar.expanded {
     left: 24px;
     right: 24px;
     max-width: none;
   }
+
   .info-content {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .info-tags {
     max-width: 100%;
     justify-content: flex-start;
