@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Snap-start",
+  "version": "1.0.0",
+  "description": "用 Pixabay 高清美图作为 Chrome 新标签页起始页，每次打开随机展示一张图片。",
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "host_permissions": [
+    "https://pixabay.com/*"
+  ],
+  "permissions": [
+    "storage"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https://pixabay.com; img-src 'self' data: https://cdn.pixabay.com https://pixabay.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com"
+  }
+}
