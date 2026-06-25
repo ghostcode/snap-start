@@ -295,6 +295,10 @@ body {
   transform: none;
 }
 
+.icon-btn.spinning svg {
+  animation: spin 0.8s linear infinite;
+}
+
 .btn-primary {
   border: none;
   border-radius: 999px;

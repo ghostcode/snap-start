@@ -432,9 +432,14 @@ async function togglePin() {
   updatePinUI();
 }
 
-function refreshImage() {
-  if (getPinnedImage()) return;
-  fetchRandomImage();
+async function refreshImage() {
+  if (getPinnedImage() || state.isLoading) return;
+  els.refreshBtn.classList.add('spinning');
+  try {
+    await fetchRandomImage(true);
+  } finally {
+    els.refreshBtn.classList.remove('spinning');
+  }
 }
 
 function updateClock() {
