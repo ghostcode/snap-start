@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Snap-start",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "用 Pixabay 高清美图作为 Chrome 新标签页起始页，每次打开随机展示一张图片。",
   "icons": {
     "16": "icon16.png",
